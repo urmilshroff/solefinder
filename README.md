@@ -26,7 +26,7 @@ A step by step series of examples that tell you how to get a development env run
 ## Retraining the model
 
 1: Download the images in .jpeg,jpg or png format
-2: Run this command in the terminal "python scripts/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --model_dir=inception --summaries_dir=tf_files/training_summaries --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir={replace_with_dir}"
+2: Run this command in the terminal "python scripts/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --model_dir=inception --summaries_dir=tf_files/training_summaries --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir=datasets/"
 
 ## Running the tests
 
