@@ -7,7 +7,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Python
+Tensorflow
+Tensorflow-hub
 
 ```
 Give examples
@@ -17,23 +19,18 @@ Give examples
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+1: Install Python using the command "pip install python"
+2: Install Tensorflow using the command "pip install tensorflow"
+3: Install Tensorflow using the command "pip install tensorflow-hub"
 
-```
-Give the example
-```
+## Retraining the model
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+1: Download the images in .jpeg,jpg or png format
+2: Run this command in the terminal "python scripts/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --model_dir=inception --summaries_dir=tf_files/training_summaries --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir={replace_with_dir}"
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+To test the retrained model run this command in the terminal "python scripts/label_image.py --graph=tf_files/retrained_graph.pb --labels=tf_files/retrained_labels.txt --output_layer=final_result --input_height=299 --input_width=299 --image={replace_with_dir}"
 
 ### Break down into end to end tests
 
