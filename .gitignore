@@ -103,3 +103,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 .DS_Store
+tf_files/training_summaries/train/events.out.tfevents.1547381156.Vinays-MacBook-Pro.local
