@@ -1,7 +1,17 @@
 import tensorflow as tf
 from tensorflow import keras
+import data_saver as ds
+import os
 
-fashion_mnist = keras.datasets.fashion_mnist
+obj = ds.DataSaver()
+while True:
+    if os.path.exists("./x.pickle") and os.path.exists("./y.pickle"):
+        print("Pickle files already exist")  # obj.load_training_data()
+        break
+    else:
+        obj.create_training_data()
+        obj.save_training_data()
+
 (train_images, train_labels), (test_images,
                                test_labels) = fashion_mnist.load_data()
 
