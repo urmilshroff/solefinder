@@ -6,7 +6,8 @@ import os
 obj = ds.DataSaver()
 while True:
     if os.path.exists("./x.pickle") and os.path.exists("./y.pickle"):
-        print("Pickle files already exist")  # obj.load_training_data()
+        xy = obj.load_training_data()
+        x, y = xy[0], xy[1]
         break
     else:
         obj.create_training_data()

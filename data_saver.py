@@ -12,7 +12,7 @@ class DataSaver:
         self.categories = ["adidas_alphabounce", "adidas_kalus", "adidas_nite_jogger",
                            "adidas_superstar", "adidas_ultraboost", "adidas_yeezy", "adidas_zeta"]
         self.training_data = []
-        self.x, self.y = [], []
+        self.x, self.y, self.xy = [], [], []
 
     def create_training_data(self):
         for category in self.categories:
@@ -44,3 +44,10 @@ class DataSaver:
         pickle_out = open("y.pickle", "wb")
         pickle.dump(self.y, pickle_out)
         pickle_out.close()
+
+    def load_training_data(self):
+        pickle_in = open("x.pickle", "rb")
+        self.xy.append(pickle.load(pickle_in))
+        pickle_in = open("y.pickle", "rb")
+        self.xy.append(pickle.load(pickle_in))
+        return self.xy
