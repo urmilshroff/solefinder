@@ -13,8 +13,11 @@ while True:
         obj.create_training_data()
         obj.save_training_data()
 
-(train_images, train_labels), (test_images,
-                               test_labels) = fashion_mnist.load_data()
+# (train_images, train_labels), (test_images,
+#                                test_labels) = fashion_mnist.load_data()
+
+x = x / 255.0
+y = y / 255.0
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
@@ -22,14 +25,11 @@ model = keras.Sequential([
     keras.layers.Dense(10, activation=tf.nn.softmax)
 ])
 
-train_images = train_images / 255.0
-test_images = test_images / 255.0
-
 model.compile(optimizer=tf.train.AdamOptimizer(),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train_images, train_labels, epochs=5)
+model.fit(x, y, epochs=5)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 print('Test accuracy:', test_acc)
