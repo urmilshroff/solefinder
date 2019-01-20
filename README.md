@@ -13,9 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-- Install Python 3.6 from python.org
-- Install TensorFlow using ```pip install tensorflow```
-- Install TensorFlow Hub using ```pip install tensorflow-hub```
+- Run ```pip3 install -r requirements.txt``` to install all required dependencies
 
 ## Retraining the model
 
