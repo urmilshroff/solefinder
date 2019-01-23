@@ -14,7 +14,7 @@ while True:
         obj.save_training_data()
 
 (train_images, train_labels), (test_images,
-                               test_labels) = fashion_mnist.load_data()
+                               test_labels) = x.load_data()
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
