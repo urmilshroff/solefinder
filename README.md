@@ -1,5 +1,7 @@
+<p align="center"><img height="200px" width="200px" src="./logo/solefinder_logo_light.png" alt="SoleFinder"/></p>
+
 # SoleFinder
-A Deep Learning app using Tensorflow to detect different shoes and provide information about them.
+A Deep Learning app using TensorFlow to detect different models of shoes and provide information about them.
 
 ## Getting Started
 
@@ -10,19 +12,21 @@ These instructions will get you a copy of the project up and running on your loc
 - Python 3.6
 - TensorFlow
 - TensorFlow Hub
+- Numpy
+- Node.js
+- Electron.js
 
 ### Installing
 
-- Run ```pip3 install -r requirements.txt``` to install all required dependencies
+- Install Python 3.6 from [python.org](https://www.python.org/downloads/release/python-368/)
+- Install Python packages using ```pip3 install -r requirements.txt```
+- Install Electron using ```npm i -D electron@latest```
 
-## Retraining the model
+## Building
 
-- Download the images in .jpeg, jpg or png format
-- Run ```bash retrain.sh```
-
-## Running the tests
-
-To test the retrained model, run ```bash run.sh```
+- Clone this repo to your computer and ```cd``` into the directory
+- Run ```npm install``` to install the Node modules
+- Run ```npm start``` to launch the app
 
 ## Contributing
 
@@ -38,4 +42,4 @@ Also checkout the list of [contributors](https://github.com/urmilshroff/solefind
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
