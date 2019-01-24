@@ -1,5 +1,5 @@
 # SoleFinder
-A machine learning app using Tensorflow to detect different shoes and provide information about them.
+A Deep Learning app using Tensorflow to detect different shoes and provide information about them.
 
 ## Getting Started
 

@@ -1,0 +1,28 @@
+{
+  "name": "solefinder",
+  "version": "0.1.0",
+  "description": "SoleFinder desktop application using Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urmilshroff/solefinder.git"
+  },
+  "keywords": [
+    "tensorflow",
+    "electron",
+    "python"
+  ],
+  "author": "Urmil Shroff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urmilshroff/solefinder/issues"
+  },
+  "homepage": "https://github.com/urmilshroff/solefinder#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^4.0.2"
+  }
+}
