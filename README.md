@@ -1,3 +1,5 @@
+<p align="center"><img height="200px" width="200px" src="./logo/solefinder_logo_light.png" alt="SoleFinder"/></p>
+
 # SoleFinder
 A Deep Learning app using TensorFlow to detect different models of shoes and provide information about them.
 
@@ -22,8 +24,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Building
 
-- First clone this repo and ```cd``` into the directory
-- Run ```npm install``` to install the dependencies
+- Clone this repo to your computer and ```cd``` into the directory
+- Run ```npm install``` to install the Node modules
 - Run ```npm start``` to launch the app
 
 ## Contributing
