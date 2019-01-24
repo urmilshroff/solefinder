@@ -1,4 +1,4 @@
-<p align="center"><img height="200px" width="200px" src="./logo/solefinder_logo_light.png" alt="SoleFinder"/></p>
+<p align="center"><img height="200px" width="200px" src="./img/logo/solefinder-light.png" alt="SoleFinder"/></p>
 
 # SoleFinder
 A Deep Learning app using TensorFlow to detect different models of shoes and provide information about them.
@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Python 3.6
 - TensorFlow
 - TensorFlow Hub
-- Numpy
+- NumPy
 - Node.js
 - Electron.js
 
