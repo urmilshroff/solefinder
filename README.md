@@ -1,5 +1,5 @@
 # SoleFinder
-A Deep Learning app using Tensorflow to detect different shoes and provide information about them.
+A Deep Learning app using TensorFlow to detect different models of shoes and provide information about them.
 
 ## Getting Started
 
@@ -10,23 +10,21 @@ These instructions will get you a copy of the project up and running on your loc
 - Python 3.6
 - TensorFlow
 - TensorFlow Hub
+- Numpy
+- Node.js
+- Electron.js
 
 ### Installing
 
-- Install Python 3.6 from python.org
-- Install TensorFlow using ```pip install tensorflow```
-- Install TensorFlow Hub using ```pip install tensorflow-hub```
+- Install Python 3.6 from [python.org](https://www.python.org/downloads/release/python-368/)
+- Install Python packages using ```pip3 install -r requirements.txt```
+- Install Electron using ```npm i -D electron@latest```
 
-## Retraining the model
+## Building
 
-- Download the images in .jpeg, jpg or png format
-- Run the following command
-```python scripts/retrain.py --bottleneck_dir=tf_files/bottlenecks --how_many_training_steps=500 --model_dir=inception --summaries_dir=tf_files/training_summaries --output_graph=tf_files/retrained_graph.pb --output_labels=tf_files/retrained_labels.txt --image_dir={replace_with_dir}```
-
-## Running the tests
-
-To test the retrained model, run the following command
-```python scripts/label_image.py --graph=tf_files/retrained_graph.pb --labels=tf_files/retrained_labels.txt --output_layer=final_result --input_height=299 --input_width=299 --image={replace_with_dir}```
+- First clone this repo and ```cd``` into the directory
+- Run ```npm install``` to install the dependencies
+- Run ```npm start``` to launch the app
 
 ## Contributing
 
@@ -42,4 +40,4 @@ Also checkout the list of [contributors](https://github.com/urmilshroff/solefind
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
