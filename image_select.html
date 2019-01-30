@@ -18,10 +18,12 @@
 
 <body>
     <div class="uk-background-muted">
-        <h1>Welcome to SoleFinder!</h1>
-        <center><img height="250px" width="250px" src="./img/logo/solefinder-text.png" /></center>
+        <h1>Select an image</h1>
         <center>
-            <a href="./image_select.html"><button class="uk-button uk-button-primary">Let's Go</button></a>
+            <div class="js-upload" uk-form-custom>
+                <input type="file" multiple>
+                <button class="uk-button uk-button-default" type="button" tabindex="-1">Select Image</button>
+            </div>
         </center>
     </div>
 </body>
