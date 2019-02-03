@@ -1,4 +1,4 @@
-<p align="center"><img height="200px" width="200px" src="./img/logo/solefinder-light.png" alt="SoleFinder"/></p>
+<p align="center"><img height="250px" width="250px" src="./img/logo/solefinder-text.png" alt="SoleFinder"/></p>
 
 # SoleFinder
 A Deep Learning app using TensorFlow to detect different models of shoes and provide information about them.
