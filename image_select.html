@@ -17,24 +17,24 @@
 
 <body>
     <div class="uk-background-default">
-        <h1>Select an image</h1>
         <center>
+            <h1>Select an image</h1>
             <div class="js-upload uk-placeholder uk-text-center">
                 <div class="js-upload uk-placeholder uk-text-center">
                     <span uk-icon="icon: cloud-upload"></span>
-                    <span class="uk-text-middle">Attach binaries by dropping them here or</span>
+                    <span class="uk-text-middle">Drag and drop a file or</span>
                     <div uk-form-custom>
                         <input type="file" multiple>
-                        <span class="uk-link">selecting one</span>
+                        <span class="uk-link">select one from manually</span>
                     </div>
                 </div>
             </div>
 
-            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
-            <div class="js-upload" uk-form-custom>
+            <progress id="js-progressbar" class="uk-progress" value="0" max="100"></progress>
+            <!-- <div class="js-upload" uk-form-custom>
                 <input type="file" multiple>
                 <button class="uk-button uk-button-default" type="button" tabindex="-1">Select Image</button>
-            </div>
+            </div> -->
             <a href="./index.html"><button class="uk-button uk-button-primary">Go Back</button></a>
         </center>
     </div>
