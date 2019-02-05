@@ -450,7 +450,7 @@ var Dropzone = function (_Emitter) {
          * If the server response was invalid.
          * `{{statusCode}}` will be replaced with the servers status code.
          */
-        dictResponseError: "Server responded with {{statusCode}} code.",
+        // dictResponseError: "Server responded with {{statusCode}} code.",
 
         /**
          * If `addRemoveLinks` is true, the text to be used for the cancel upload link.
