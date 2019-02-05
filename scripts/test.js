@@ -1,5 +1,4 @@
 var bar = document.getElementById('js-progressbar');
-
 UIkit.upload('.js-upload', {
 
     url: './upload.php',
@@ -7,10 +6,8 @@ UIkit.upload('.js-upload', {
 
     beforeSend: function(environment) {
         console.log('beforeSend', arguments);
-
         // The environment object can still be modified here. 
         // var {data, method, headers, xhr, responseType} = environment;
-
     },
     beforeAll: function() {
         console.log('beforeAll', arguments);

@@ -25,11 +25,15 @@
                 <div class="js-upload uk-placeholder uk-text-center">
                     <span uk-icon="icon: cloud-upload"></span>
                     <span class="uk-text-middle">Drag and drop a file or</span>
+
                     <div uk-form-custom>
-                        <input type="file" multiple onload="./scripts/test.js">
-                        <span class="uk-link">select one from manually</span>
+
+                        <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"> >select one from manually</form>
+
                     </div>
+
                 </div>
+
             </div>
 
             <progress id="js-progressbar" class="uk-progress" value="0" max="100"></progress>
