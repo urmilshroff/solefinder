@@ -2,7 +2,7 @@ var bar = document.getElementById('js-progressbar');
 
 UIkit.upload('.js-upload', {
 
-    url: 'upload.php',
+    url: './upload.php',
     multiple: true,
 
     beforeSend: function(environment) {
