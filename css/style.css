@@ -1,15 +1,32 @@
+html {
+    overflow: visible;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    /* background: url(background.jpg) no-repeat center center fixed;  */
     background-size: cover;
     margin: 0;
     padding: 0;
 }
 
-#background-fit {
-    background-size: cover;
+.bg-sf-gradient {
+    background-image: linear-gradient(#279ef4, #33c5f8);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
-h1 {
-    text-align: center;
+#wide-card {
+    /* width: 75%; */
+    padding: 70px;
+}
+
+#sf-logo {
+    height: 250px;
+    width: 250px;
+    padding: 10px 5px 0px;
 }
