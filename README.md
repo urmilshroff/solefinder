@@ -20,6 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 - Install Python 3.6 from [python.org](https://www.python.org/downloads/release/python-368/)
 - Install Python packages using ```pip3 install -r requirements.txt```
+- Install python-shell using ```npm install python-shell```
 - Install Electron using ```npm i -D electron@latest```
 
 ## Building

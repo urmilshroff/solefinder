@@ -21,8 +21,10 @@
     "url": "https://github.com/urmilshroff/solefinder/issues"
   },
   "homepage": "https://github.com/urmilshroff/solefinder#readme",
-  "dependencies": {},
+  "dependencies": {
+    "python-shell": "^1.0.7"
+  },
   "devDependencies": {
-    "electron": "^4.0.2"
+    "electron": "^4.0.4"
   }
 }
