@@ -29,13 +29,33 @@
                         <div class="card-body">
                             <h3 class="card-title">Select an image</h3>
                             <p class="card-text">Select an image from your computer to scan it.</p>
-                            <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
-                            <a href="./index.html"><button type="button" class="btn btn-outline-primary">Back</button></a>
+                            <!-- <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form> -->
+
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+                                    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                </div>
+                                <!-- <script>
+                                    console.log(file);</script> -->
+
+                                <!-- <script type="text/javascript">
+                                    console.log($('input[type=file]').change(function() {
+                                        var filePath = $('#fileUpload').val();
+                                    }));
+                                </script> -->
+                                <script>
+                                    document.getElementById('fileInput').onchange = function () {
+                                    alert('Selected file: ' + this.value);
+                                };
+                            </script>
+                                <a href="./index.html"><button type="button" class="btn btn-outline-primary">Back</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </center>
 </body>
 
