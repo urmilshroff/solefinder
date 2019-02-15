@@ -1,4 +1,4 @@
 import sys
 
-print("I can here you")
+print("I can hear you")
 sys.stdout.flush()

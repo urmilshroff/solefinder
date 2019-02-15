@@ -12,13 +12,13 @@ function callingPython() {
  
   var options = {
     pythonPath: '/usr/local/bin/python3',
-    scriptPath : path.join(__dirname, '/../backend/'),
+    scriptPath : path.join(__dirname, '/backend/'),
     // args : [city]
   }
 
   var weather = new python('test.py', options);
 
   weather.on('message', function(message) {
-    swal(message);
+    window.alert(message);
   })
 }
