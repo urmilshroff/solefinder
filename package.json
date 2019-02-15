@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/urmilshroff/solefinder#readme",
   "dependencies": {
-    "python-shell": "^1.0.7"
+    "python-shell": "^0.5.0"
   },
   "devDependencies": {
     "electron": "^4.0.4"

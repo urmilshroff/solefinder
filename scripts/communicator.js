@@ -5,10 +5,20 @@
 //     // var city = document.getElementById("").value
 // 
 
-var pyshell = require('python-shell');
+function callingPython() {
+  var python = require("python-shell")
+  var path = require("path")
 
-pyshell.run('/backend/test.py', function(err, results) {
-    if (err) throw err;
-    console.log('/backend/test.py finished.');
-    console.log('results', results);
-});
+ 
+  var options = {
+    pythonPath: '/usr/local/bin/python3',
+    scriptPath : path.join(__dirname, '/../backend/'),
+    // args : [city]
+  }
+
+  var weather = new python('test.py', options);
+
+  weather.on('message', function(message) {
+    swal(message);
+  })
+}

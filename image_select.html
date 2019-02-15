@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="SoleFinder desktop app">
-
+    <script src="scripts/communicator.js"></script>
     <title>SoleFinder</title>
 
     <link href="./css/style.css" rel="stylesheet" type="text/css">
@@ -32,6 +32,7 @@
                             <p class="card-text">Select an image from your computer to scan it.</p>
                             <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Click to select an image from your computer" onclick="imagePicker()">Select image</button>
                             <a href="./index.html"><button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Go back">Back</button></a>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Call Python" onclick="callingPython()">Call Python</button>
                             <p id="impath"></p>
                             <!-- <div class="input-group">
                                 <div class="custom-file">
