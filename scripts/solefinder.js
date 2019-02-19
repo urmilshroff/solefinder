@@ -11,12 +11,12 @@ function imagePicker() {
             }]
         },
         function(filepaths, bookmarks) {
-            var path = filepaths[0].toString('base64') //contains the filepath of the image
+            var pathToImage = filepaths[0].toString('base64') //contains the filepath of the image
             var _img = fs.readFileSync(filepaths[0]).toString('base64')
             var _out = '<img src="data:image/png;base64,' + _img + '" />'
-            console.log(path)
-            // callingPython(path)
-            return path
+            console.log(pathToImage)
+            // callingPython(pathToImage)
+            return pathToImage
         })
 }
 
