@@ -16,12 +16,12 @@ function imagePicker() {
             var _img = fs.readFileSync(filepaths[0]).toString('base64')
             var _out = '<img src="data:image/png;base64,' + _img + '" />'
             console.log(pathToImage)
-            // callingPython(pathToImage)
-            return pathToImage
+            detectShoe()
+            // return pathToImage
         })
 }
 
-function callingPython() {
+function detectShoe() {
     var options = {
         pythonPath: '/usr/local/bin/python3', //for Python 3 on Linux/macOS
         scriptPath: path.join(__dirname, '/backend/'),
