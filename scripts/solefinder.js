@@ -3,6 +3,7 @@ var fs = remote.require('fs')
 var python = require("python-shell")
 var path = require("path")
 var pathToImage
+var shoe
 
 function imagePicker() {
     remote.dialog.showOpenDialog(remote.getCurrentWindow(), {
@@ -17,7 +18,7 @@ function imagePicker() {
             var _img = fs.readFileSync(filepaths[0]).toString('base64')
             var _out = '<img src="data:image/png;base64,' + _img + '" />'
 
-            console.log("Selected image is "+pathToImage)
+            console.log("Selected image is " + pathToImage)
 
             changeImage()
             detectShoe()
@@ -38,7 +39,14 @@ function detectShoe() {
 
     var callTensorFlow = new python('label_image.py', options)
 
-    callTensorFlow.on('message', function(shoe) {
-        swal.fire("Shoe Detected!", "Detected shoe was "+shoe, "success")
+    callTensorFlow.on('message', function(detectedShoe) {
+        shoe = detectedShoe //saves detected shoe name globally
+        swal.fire("Shoe Detected!", "Detected shoe was " + shoe, "success")
     })
+}
+
+function searchAmazon() {
+    window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
+    // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
+    // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
 }
