@@ -139,5 +139,5 @@ if __name__ == "__main__":
     # print('\nEvaluation time (1-image): {:.3f}s\n'.format(end-start))
     # template = "{} (score={:0.5f})"
     for i in top_k:
-        print("Detected shoe is {}!".format(labels[i].title()))
+        print(labels[i].title())
         sys.stdout.flush()

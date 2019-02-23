@@ -38,7 +38,7 @@ function detectShoe() {
 
     var callTensorFlow = new python('label_image.py', options)
 
-    callTensorFlow.on('message', function(message) {
-        window.alert(message)
+    callTensorFlow.on('message', function(shoe) {
+        swal.fire("Shoe Detected!", "Detected shoe was "+shoe, "success")
     })
 }
