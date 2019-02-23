@@ -30,3 +30,9 @@ body {
     width: 250px;
     padding: 10px 5px 0px;
 }
+
+#image-placeholder {
+    height: 170px;
+    width: 170px;
+    padding: 10px 5px 0px;
+}
