@@ -50,3 +50,34 @@ function searchAmazon() {
     // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
 }
+
+//This method checks for internet connection and alerts if not connected
+function doesConnectionExist() {
+    var xhr = new XMLHttpRequest();
+    var file = "https://www.kirupa.com/blank.png";
+    var randomNum = Math.round(Math.random() * 10000); //to prevent cached result 
+
+    xhr.open('HEAD', file + "?rand=" + randomNum, true); //HEAD checks if file exists, true represents asynchronous connection(done in background)
+
+    xhr.send(); //HTTP request gets transmitted
+
+    xhr.addEventListener("readystatechange", processRequest, false);
+
+    function processRequest(e) {
+        if (xhr.readyState == 4) //4 translates to request being completed
+        {
+            if (xhr.status >= 200 && xhr.status < 304) //if status between 200 and 303, connection exists - returns true
+
+            {
+                
+            } else {
+                Swal.fire({
+                    title: 'No Internet Connection!',
+                    type: 'error',
+                    showCloseButton: true,
+                    confirmButtonText: 'Quit!'
+                })
+            }
+        }
+    }
+}
