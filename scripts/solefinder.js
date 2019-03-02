@@ -1,7 +1,9 @@
-var remote = require('electron').remote
+const remote = require('electron').remote
+let w = remote.getCurrentWindow()
 var fs = remote.require('fs')
 var python = require("python-shell")
 var path = require("path")
+const quit = $('#quit')
 var pathToImage
 var shoe
 
@@ -63,20 +65,58 @@ function doesConnectionExist() {
 
     xhr.addEventListener("readystatechange", processRequest, false);
 
+
+
+
     function processRequest(e) {
         if (xhr.readyState == 4) //4 translates to request being completed
         {
             if (xhr.status >= 200 && xhr.status < 304) //if status between 200 and 303, connection exists - returns true
 
             {
-                
+
             } else {
-                Swal.fire({
+                // Swal.fire({
+                //     title: 'No Internet Connection!',
+                //     type: 'error',
+                //     // showCloseButton: true,
+                //     // confirmButtonText: 'Quit!',
+                //     html:
+                //     '<button id= "quit">Hello</button>',
+                // 
+
+                swal.fire({
                     title: 'No Internet Connection!',
                     type: 'error',
-                    showCloseButton: true,
-                    confirmButtonText: 'Quit!'
+                    html: '<button id="quit">Quit</button>',
+                    showConfirmButton: false,
+
+                    onBeforeOpen: () => {
+                        const content = Swal.getContent()
+                        const $ = content.querySelector.bind(content)
+
+                        const quit = $('#quit')
+
+
+
+                        function quitWindow() {
+                            w.close();
+                        }
+
+                        quit.addEventListener('click', () => {
+
+                            quitWindow()
+                        })
+
+
+                    },
+
                 })
+
+
+
+                //})
+
             }
         }
     }
