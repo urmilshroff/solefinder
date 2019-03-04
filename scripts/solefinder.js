@@ -1,4 +1,5 @@
-var remote = require('electron').remote
+const remote = require('electron').remote
+let w = remote.getCurrentWindow()
 var fs = remote.require('fs')
 var python = require("python-shell")
 var path = require("path")
@@ -46,7 +47,58 @@ function detectShoe() {
 }
 
 function searchAmazon() {
+    console.log(shoe)
     window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
+}
+
+function searchFlipkart() {
+    window.open("https://www.flipkart.com/search?q=" + shoe)
+}
+
+
+//This method checks for internet connection and alerts if not connected
+function doesConnectionExist() {
+    var xhr = new XMLHttpRequest();
+    var file = "https://www.kirupa.com/blank.png";
+    var randomNum = Math.round(Math.random() * 10000); //to prevent cached result 
+
+    xhr.open('HEAD', file + "?rand=" + randomNum, true); //HEAD checks if file exists, true represents asynchronous connection(done in background)
+
+    xhr.send(); //HTTP request gets transmitted
+
+    xhr.addEventListener("readystatechange", processRequest, false);
+
+
+
+
+    function processRequest(e) {
+        if (xhr.readyState == 4) //4 translates to request being completed
+        {
+            if (xhr.status >= 200 && xhr.status < 304) //if status between 200 and 303, connection exists - returns true
+
+            {
+
+            } else {
+            
+                swal.fire({
+                    title: 'No Internet Connection!',
+                    text: 'Please connect to the Internet and try again!',
+                    type: 'error',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Quit',
+                    allowOutsideClick:false
+                }).then((result) => {
+                    if (result.value) {
+                        quitWindow(); 
+                    }
+                })
+            }
+        }
+    }
+}
+
+function quitWindow() {
+    w.close();
 }
