@@ -3,7 +3,6 @@ let w = remote.getCurrentWindow()
 var fs = remote.require('fs')
 var python = require("python-shell")
 var path = require("path")
-const quit = $('#quit')
 var pathToImage
 var shoe
 
@@ -48,10 +47,16 @@ function detectShoe() {
 }
 
 function searchAmazon() {
+    console.log(shoe)
     window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
 }
+
+function searchFlipkart() {
+    window.open("https://www.flipkart.com/search?q=" + shoe)
+}
+
 
 //This method checks for internet connection and alerts if not connected
 function doesConnectionExist() {
@@ -76,48 +81,24 @@ function doesConnectionExist() {
             {
 
             } else {
-                // Swal.fire({
-                //     title: 'No Internet Connection!',
-                //     type: 'error',
-                //     // showCloseButton: true,
-                //     // confirmButtonText: 'Quit!',
-                //     html:
-                //     '<button id= "quit">Hello</button>',
-                // 
-
+            
                 swal.fire({
                     title: 'No Internet Connection!',
+                    text: 'Please connect to the Internet and try again!',
                     type: 'error',
-                    html: '<button id="quit">Quit</button>',
-                    showConfirmButton: false,
-
-                    onBeforeOpen: () => {
-                        const content = Swal.getContent()
-                        const $ = content.querySelector.bind(content)
-
-                        const quit = $('#quit')
-
-
-
-                        function quitWindow() {
-                            w.close();
-                        }
-
-                        quit.addEventListener('click', () => {
-
-                            quitWindow()
-                        })
-
-
-                    },
-
+                    showConfirmButton: true,
+                    confirmButtonText: 'Quit',
+                    allowOutsideClick:false
+                }).then((result) => {
+                    if (result.value) {
+                        quitWindow(); 
+                    }
                 })
-
-
-
-                //})
-
             }
         }
     }
+}
+
+function quitWindow() {
+    w.close();
 }
