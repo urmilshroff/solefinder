@@ -19,7 +19,7 @@ function imagePicker() {
             var _img = fs.readFileSync(filepaths[0]).toString('base64')
             var _out = '<img src="data:image/png;base64,' + _img + '" />'
 
-            console.log("Selected image is " + pathToImage)
+            console.log(pathToImage)
 
             changeImage()
             detectShoe()

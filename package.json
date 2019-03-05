@@ -1,6 +1,6 @@
 {
-  "name": "solefinder",
-  "version": "0.1.0",
+  "name": "SoleFinder",
+  "version": "1.0.0",
   "description": "SoleFinder desktop application using Electron",
   "main": "main.js",
   "scripts": {

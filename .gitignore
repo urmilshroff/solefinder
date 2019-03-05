@@ -186,5 +186,6 @@ typings/
 
 .DS_Store
 desktop.ini
+release-builds/
 *.local
 *.pickle
