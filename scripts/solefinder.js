@@ -42,7 +42,7 @@ function detectShoe() {
 
     callTensorFlow.on('message', function(detectedShoe) {
         shoe = detectedShoe //saves detected shoe name globally
-        swal.fire("Shoe Detected!", "Detected shoe was " + shoe, "success")
+        swal.fire("Shoe Detected!", "Detected shoe was " + shoe + "!", "success")
     })
 }
 
@@ -54,6 +54,7 @@ function searchAmazon() {
 }
 
 function searchFlipkart() {
+    console.log(shoe)
     window.open("https://www.flipkart.com/search?q=" + shoe)
 }
 
@@ -70,9 +71,6 @@ function doesConnectionExist() {
 
     xhr.addEventListener("readystatechange", processRequest, false);
 
-
-
-
     function processRequest(e) {
         if (xhr.readyState == 4) //4 translates to request being completed
         {
@@ -81,17 +79,17 @@ function doesConnectionExist() {
             {
 
             } else {
-            
+
                 swal.fire({
-                    title: 'No Internet Connection!',
+                    title: 'No Internet Connection',
                     text: 'Please connect to the Internet and try again!',
                     type: 'error',
                     showConfirmButton: true,
                     confirmButtonText: 'Quit',
-                    allowOutsideClick:false
+                    allowOutsideClick: false
                 }).then((result) => {
                     if (result.value) {
-                        quitWindow(); 
+                        quitWindow();
                     }
                 })
             }
