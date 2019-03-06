@@ -3,7 +3,7 @@ let w = remote.getCurrentWindow()
 var fs = remote.require('fs')
 var python = require("python-shell")
 var path = require("path")
-var pathToImage
+var pathToImage = 0
 var shoe
 
 function imagePicker() {
@@ -32,6 +32,8 @@ function changeImage() {
 }
 
 function detectShoe() {
+
+
     var options = {
         pythonPath: '/usr/local/bin/python3', //for Python 3 on Linux/macOS
         scriptPath: path.join(__dirname, '/backend/'),
@@ -47,15 +49,25 @@ function detectShoe() {
 }
 
 function searchAmazon() {
-    console.log(shoe)
-    window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
+    if (pathToImage == 0) {
+        swal.fire("Please input an image!");
+
+    } else {
+        console.log(shoe)
+        window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
+    }
+
     // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
 }
 
 function searchFlipkart() {
-    console.log(shoe)
-    window.open("https://www.flipkart.com/search?q=" + shoe)
+    if (pathToImage == 0) {
+        swal.fire("Please input an image!");
+    } else {
+        console.log(shoe)
+        window.open("https://www.flipkart.com/search?q=" + shoe)
+    }
 }
 
 
@@ -96,6 +108,7 @@ function doesConnectionExist() {
         }
     }
 }
+
 
 function quitWindow() {
     w.close();
