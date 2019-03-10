@@ -1,3 +1,6 @@
 numpy
 tensorflow
 tensorflow-hub
+beautifulsoup4
+requests
+lxml
