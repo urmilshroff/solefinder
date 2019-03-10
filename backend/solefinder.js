@@ -28,12 +28,9 @@ function imagePicker() {
 
 function changeImage() {
     document.getElementById("image-placeholder").src = pathToImage
-    // document.getElementById("card-text").innerHTML = pathToImage //not working
 }
 
 function detectShoe() {
-
-
     var options = {
         pythonPath: '/usr/local/bin/python3', //for Python 3 on Linux/macOS
         scriptPath: path.join(__dirname, '/backend/'),
@@ -44,32 +41,37 @@ function detectShoe() {
 
     callTensorFlow.on('message', function(detectedShoe) {
         shoe = detectedShoe //saves detected shoe name globally
-        swal.fire("Shoe Detected!", "Detected shoe was " + shoe + "!", "success")
+        Swal.fire("Shoe Detected!", "Detected shoe was " + shoe + "!", "success")
     })
 }
 
 function searchAmazon() {
     if (pathToImage == 0) {
-        swal.fire("Please input an image!");
+        Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Please select an image!'
+        })
 
     } else {
         console.log(shoe)
         window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     }
-
-    // require("shell").openExternal("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
-    // electronOpenLinkInBrowser("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
 }
 
 function searchFlipkart() {
     if (pathToImage == 0) {
-        swal.fire("Please input an image!");
+        Swal.fire({
+            type: 'error',
+            title: 'Error',
+            text: 'Please select an image!'
+        })
+
     } else {
         console.log(shoe)
         window.open("https://www.flipkart.com/search?q=" + shoe)
     }
 }
-
 
 //This method checks for internet connection and alerts if not connected
 function doesConnectionExist() {
@@ -108,7 +110,6 @@ function doesConnectionExist() {
         }
     }
 }
-
 
 function quitWindow() {
     w.close();
