@@ -188,3 +188,4 @@ typings/
 desktop.ini
 *.local
 *.pickle
+release-builds/SoleFinder-darwin-x64/SoleFinder.app.zip
