@@ -18,6 +18,7 @@ from __future__ import division
 from __future__ import print_function
 
 import argparse
+import sys
 
 import numpy as np
 import tensorflow as tf
@@ -134,7 +135,9 @@ if __name__ == "__main__":
     })
   results = np.squeeze(results)
 
-  top_k = results.argsort()[-5:][::-1]
+  top_k = results.argsort()[-1:][::-1]
   labels = load_labels(label_file)
   for i in top_k:
-    print(labels[i], results[i])
+    print(labels[i].title())
+    # print(f"{labels[i].title()} detected with an accuracy of {results[i]}!")
+    sys.stdout.flush()
