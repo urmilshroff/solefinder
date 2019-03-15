@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" style="height: 100%">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="SoleFinder desktop app">
+
     <title>SoleFinder</title>
 
     <link href="./css/style.css" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/shards-ui@latest/dist/css/shards.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
@@ -27,29 +29,16 @@
             <div class="container" id="wide-card">
                 <div class="row justify-content-md-center">
                     <div class="card">
+                        <img class="card-img-top" id="sf-logo" src="./img/logo/solefinder-text.png" alt="SoleFinder">
                         <div class="card-body">
-                            <h3 class="card-title">Select an image</h3>
-
-                            <img class="card-img-top" id="image-placeholder" src="./img/upload.svg" alt="Select image" onclick="imagePicker()">
-
-                            <p>
-                                <p class="card-text">Select an image from your computer to scan it.</p>
-
-                                <!-- <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Select an image from your computer" onclick="imagePicker()">Select Image</button> -->
-
-                                <!-- <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Detect shoe" onclick="detectShoe()">Detect Shoes</button> -->
-
-                                <!-- <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Search Amazon" onclick="searchAmazon()">Buy from Amazon</button>
-
-                                <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Search Flipkart" onclick="searchFlipkart()">Buy from Flipkart</button> -->
-                                
-                                <a href="./shoe_info.html"><button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Scan shoe">Next</button></a>
-
-                                <a href="./index.html"><button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Go back">Back</button></a>
+                            <h3 class="card-title">Detected Shoe name here</h3>
+                            <p class="card-text">Web scraped info about the shoe here</p>
+                            <a href="./image_select.html"><button type="button" class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Scan another shoe">Back</button></a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </center>
 </body>
 
