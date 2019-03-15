@@ -45,7 +45,7 @@ function detectShoe() {
     })
 }
 
-function searchAmazon() {
+function isImageSelected() {
     if (pathToImage == 0) {
         Swal.fire({
             type: 'error',
@@ -53,23 +53,29 @@ function searchAmazon() {
             text: 'Please select an image!'
         })
 
+        return false
     } else {
+        return true
+    }
+}
+
+function searchAmazon() {
+    if (isImageSelected() == true) {
         console.log(shoe)
         window.open("https://www.amazon.in/s?i=shoes&field-keywords=" + shoe)
     }
 }
 
 function searchFlipkart() {
-    if (pathToImage == 0) {
-        Swal.fire({
-            type: 'error',
-            title: 'Error',
-            text: 'Please select an image!'
-        })
-
-    } else {
+    if (isImageSelected() == true) {
         console.log(shoe)
         window.open("https://www.flipkart.com/search?q=" + shoe)
+    }
+}
+
+function loadShoeInfoPage() {
+    if (isImageSelected() == true) {
+        window.location.href = './shoe_info.html'
     }
 }
 
