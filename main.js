@@ -11,7 +11,7 @@ let win
 function createWindow() {
     // Create the browser window.
     win = new BrowserWindow({
-        width: 800,
+        width: 770,
         height: 650
     })
 
@@ -19,7 +19,7 @@ function createWindow() {
     win.loadFile('loading_screen.html')
 
     // Open the DevTools.
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {
