@@ -22,7 +22,7 @@ function imagePicker() {
             console.log(pathToImage)
 
             changeImage()
-            detectShoe()
+            // detectShoe()
         })
 }
 
@@ -31,26 +31,28 @@ function changeImage() {
 }
 
 function detectShoe() {
-    var options = {
-        pythonPath: '/usr/local/bin/python3', //for Python 3 on Linux/macOS
-        scriptPath: path.join(__dirname, '/backend/'),
-        args: ['--graph=tf_files/retrained_graph.pb', '--labels=tf_files/retrained_labels.txt', '--output_layer=final_result', '--input_height=299', '--input_width=299', '--image=' + pathToImage] //change the test image filename
-    }
-
-    Swal.fire({
-        title: "Scanning shoe...",
-        allowOutsideClick: false,
-        onBeforeOpen: () => {
-            Swal.showLoading()
+    if (isImageSelected() == true) {
+        var options = {
+            pythonPath: '/usr/local/bin/python3', //for Python 3 on Linux/macOS
+            scriptPath: path.join(__dirname, '/backend/'),
+            args: ['--graph=tf_files/retrained_graph.pb', '--labels=tf_files/retrained_labels.txt', '--output_layer=final_result', '--input_height=299', '--input_width=299', '--image=' + pathToImage] //change the test image filename
         }
-    })
 
-    var callTensorFlow = new python('label_image.py', options)
+        Swal.fire({
+            title: "Scanning shoe...",
+            allowOutsideClick: false,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+            }
+        })
 
-    callTensorFlow.on('message', function(detectedShoe) {
-        shoe = detectedShoe //saves detected shoe name globally
-        Swal.fire("Shoe Detected!", "Detected shoe was " + shoe + "!", "success")
-    })
+        var callTensorFlow = new python('label_image.py', options)
+
+        callTensorFlow.on('message', function(detectedShoe) {
+            shoe = detectedShoe //saves detected shoe name globally
+            Swal.fire("Sole Found!", "Detected shoe was " + shoe + "!", "success")
+        })
+    }
 }
 
 function isImageSelected() {
@@ -78,12 +80,6 @@ function searchFlipkart() {
     if (isImageSelected() == true) {
         console.log(shoe)
         window.open("https://www.flipkart.com/search?q=" + shoe)
-    }
-}
-
-function loadShoeInfoPage() {
-    if (isImageSelected() == true) {
-        window.location.href = './shoe_info.html'
     }
 }
 
