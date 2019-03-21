@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" style="height: 100%">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="SoleFinder desktop app">
+
+    <title>SoleFinder</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 100%;
+            width: 100%;
+        }
+
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="imgbox"><img class="center-fit" src="./img/splash_screen.gif"></div><br>
+    <script type="text/javascript">
+        setTimeout(function() //Immediately-Invoked Function Expression
+            {
+                window.location.href = "index.html"; //calls index.html after 5 seconds
+            }, 5000); // 5 seconds
+    </script>
+
+</body>
+
+</html>

@@ -37,6 +37,14 @@ function detectShoe() {
         args: ['--graph=tf_files/retrained_graph.pb', '--labels=tf_files/retrained_labels.txt', '--output_layer=final_result', '--input_height=299', '--input_width=299', '--image=' + pathToImage] //change the test image filename
     }
 
+    Swal.fire({
+        title: "Scanning shoe...",
+        allowOutsideClick: false,
+        onBeforeOpen: () => {
+            Swal.showLoading()
+        }
+    })
+
     var callTensorFlow = new python('label_image.py', options)
 
     callTensorFlow.on('message', function(detectedShoe) {
